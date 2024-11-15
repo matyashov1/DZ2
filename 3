@@ -1,0 +1,33 @@
+CREATE TABLE Routes (
+    route_id INTEGER PRIMARY KEY,
+    route_number VARCHAR(10) NOT NULL,
+    start_point VARCHAR(50) NOT NULL,
+    end_point VARCHAR(50) NOT NULL,
+    distance_km DECIMAL(5, 2) NOT NULL
+);
+
+CREATE TABLE Buses (
+    bus_id INTEGER PRIMARY KEY,
+    model VARCHAR(50) NOT NULL,
+    plate_number VARCHAR(15) NOT NULL,
+    capacity INTEGER NOT NULL,
+    route_id INTEGER,
+    FOREIGN KEY (route_id) REFERENCES Routes(route_id)
+);
+
+CREATE TABLE Drivers (
+    driver_id INTEGER PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    license_number VARCHAR(20) NOT NULL,
+    experience_years INTEGER NOT NULL,
+    bus_id INTEGER,
+    FOREIGN KEY (bus_id) REFERENCES Buses(bus_id)
+);
+
+CREATE TABLE Conductors (
+    conductor_id INTEGER PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    phone_number VARCHAR(15) NOT NULL,
+    bus_id INTEGER,
+    FOREIGN KEY (bus_id) REFERENCES Buses(bus_id)
+);

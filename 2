@@ -1,0 +1,23 @@
+CREATE TABLE Cabinet (
+    CabinetID INT PRIMARY KEY AUTO_INCREMENT, -- Уникальный идентификатор кабинета
+    RowNumber INT NOT NULL,                   -- Номер ряда
+    DeskNumber INT NOT NULL,                  -- Номер парты в ряду
+    VariantNumber INT NOT NULL                -- Вариант (например, левый или правый)
+);
+
+
+
+CREATE TABLE Student (
+    StudentID INT PRIMARY KEY AUTO_INCREMENT, -- Уникальный идентификатор ученика
+    FirstName VARCHAR(50) NOT NULL,           -- Имя ученика
+    LastName VARCHAR(50) NOT NULL,            -- Фамилия ученика
+    Class VARCHAR(10) NOT NULL                -- Класс ученика (например, 7А, 8Б)
+);
+
+
+CREATE TABLE Cabinet (
+    CabinetID INT PRIMARY KEY AUTO_INCREMENT, -- Уникальный идентификатор кабинета
+    RowNumber INT NOT NULL,                   -- Номер ряда
+    DeskNumber INT NOT NULL,                  -- Номер парты в ряду
+    VariantNumber INT NOT NULL                -- Вариант (например, левый или правый)
+);

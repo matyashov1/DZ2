@@ -1,0 +1,43 @@
+Описание: Напишите программу, которая выведет все натуральные числа в
+промежутке от M до N.
+Пример:
+● Вход: M = 1, N = 5
+● Выход: 1, 2, 3, 4, 5
+● Вход: M = 4, N = 8
+● Выход: 4, 5, 6, 7, 8
+Заготовка:
+using System;
+public class Answer
+{
+public static void PrintRange(int M, int N)
+{
+// Введите свое решение ниже
+}
+static public void Main(string[] args)
+{
+int M = 1; // Можно поменять значение для проверки
+int N = 5; // Можно поменять значение для проверки
+Console.WriteLine("Числа в промежутке:");
+PrintRange(M, N);
+}
+}
+Подсказка: Используйте рекурсию или цикл для вывода чисел в заданном диапазоне.
+Эталонное решение:
+using System;
+public class Answer
+{
+public static void PrintRange(int M, int N)
+{
+if (M > N) return;
+Console.Write(M);
+if (M < N) Console.Write(", ");
+PrintRange(M + 1, N);
+}
+static public void Main(string[] args)
+{
+int M = 1; // Можно поменять значение для проверки
+int N = 5; // Можно поменять значение для проверки
+Console.WriteLine("Числа в промежутке:");
+PrintRange(M, N);
+}
+}
